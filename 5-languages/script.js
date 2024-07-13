@@ -1,7 +1,8 @@
 
-
+//данные принимают строковое значение
 let languages = String(prompt('enter please your langeages (ru, en, fr, de): '));
 
+// перечень языков
 let ru = 'ru';
 let en = 'en';
 let fr = 'fr';

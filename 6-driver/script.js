@@ -1,5 +1,5 @@
 
-
+//данные задания
 let hasLicence = true;
 let age = 18;
 let isDrink = false;
