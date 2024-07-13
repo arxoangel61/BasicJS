@@ -6,12 +6,11 @@ let isDrink = false;
 
 
 //данные пользователя
-let userLicence = true;
 let ageUser = 16;
-let isDrinkUser = false;
 
 
-let canDriver = (hasLicence == userLicence && age <= ageUser && isDrink == isDrinkUser)
+
+let canDriver = ((age <= ageUser) && hasLicence && !isDrink);              
 
 console.log(`Водитель может сесть за руль? ${canDriver ? 'Может' : 'Не может'}`)
 
