@@ -10,7 +10,7 @@ let ageUser = 16;
 
 
 
-let canDriver = ((age <= ageUser) && hasLicence && !isDrink);              
+let canDriver = (age <= ageUser && hasLicence && !isDrink);              
 
 console.log(`Водитель может сесть за руль? ${canDriver ? 'Может' : 'Не может'}`)
 
