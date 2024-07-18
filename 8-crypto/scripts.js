@@ -37,15 +37,15 @@ function checkPass(pass1, pass2) {
             let cheakDecoderPass = encoder(pass2)
             // console.log(cheakDecoderPass)
             if(decoderPass == cheakDecoderPass) {
-                return console.log(true)
+                return true
             } else {
-                return console.log(false)
+                return false
             }
         }
     } else if (decoderPass.length != cheakPass.length){
-        return console.log(false)
+        return false
     } else {
-        return console.log(false)
+        return false
     }
 }
 
