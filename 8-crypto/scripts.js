@@ -1,5 +1,5 @@
 
-
+/*
 function encoder(code) {
     let codeLength = code.length;
     // console.log(codeLength)
@@ -72,3 +72,88 @@ let result4 = checkPass(elem4, 'passstop') //проверка на ошибку
 let result5 = checkPass('ssapdorw', 'password') // проверка на работу 2 функции без присваения элемента 
 
 let result6 = checkPass('ssapdor', 'password') // проверка если длинна элемента1 меньше длины элемента2
+
+*/
+
+
+function encoder(code) {
+    let codeLength = code.length;
+    let originalCode = code.split('');
+    let copyOriginalCode = code.split('')
+
+    let finalArr = [];
+    let reversArr = [];
+    let newReversArr = [];
+    
+
+    if(codeLength % 2 == 0) {
+        for(let i = 0; i < codeLength; i++) {
+            if(i*2 == codeLength) {
+                let spliceArr = copyOriginalCode.splice(0, i)
+                for(let b = 0; b < i; b++) {
+                    finalArr.push(originalCode[b])
+                    reversArr = finalArr.reverse()
+                }
+                newReversArr = reversArr.concat(copyOriginalCode)
+                return newReversArr.join('')
+            }
+        }
+    } else if(codeLength % 2 != 0) {
+        for(let a = 0; a < codeLength; a++) {
+            if(a*2 - 1 == codeLength) {
+                let spliceArr = copyOriginalCode.splice(0, a)
+                for(let k = 0; k < a; k++) {
+                    finalArr.push(originalCode[k])
+                    reversArr = finalArr.reverse()
+                }  
+                newReversArr = reversArr.concat(copyOriginalCode)
+                return newReversArr.join('')
+            }
+        }
+    }
+}
+
+
+function checkPass(pass1, pass2) {
+
+    let decoderPass = pass1;
+    // console.log(decoderPass.length);
+    let cheakPass = pass2;
+    // console.log(cheakPass.length)
+    let cheakArr = [];
+    let copydecoderPass = []
+    let reversArr = [];
+    let finalArr = [];
+
+    if(decoderPass.length == cheakPass.length) {
+            for(let i = 0; i < cheakPass.length; i++) {
+                cheakArr.push(cheakPass[i])
+                copydecoderPass.push(decoderPass[i])
+                if (i*2 == cheakPass.length || i*2-1 == cheakPass.length) {
+                    let spliceArr = cheakArr.splice(0, i);
+                    let spliceDecoderArr = copydecoderPass.splice(0, i);
+                    for(let b = 0; b < i; b++) {
+                        finalArr.push(spliceArr[b])
+                        reversArr = finalArr.reverse()
+                    }
+                    console.log(reversArr = reversArr.join(''))
+                    console.log(spliceDecoderArr = spliceDecoderArr.join(''))
+                    if (reversArr === spliceDecoderArr) {
+                        return true
+                    } else {
+                        return false
+                    }
+                }
+            }
+    } else {
+        return false
+    }
+}
+
+
+let elem = encoder('password'); 
+console.log(elem);
+
+
+let result5 = checkPass(elem, 'password') // проверка на работу 2 функции без присваения элемента 
+console.log(result5)
