@@ -30,11 +30,7 @@ function num(arr, numDel) {
 }
 
 function numDel(num) {
-    if(num > 5) {
-        return false
-    } else {
-        return true
-    }
+    return num > 5 ? false : true
 }
 
 
