@@ -62,7 +62,7 @@ function repeatArr(arr) {
     //console.log(repearArr2.length)
 
 
-    if (repearArr2.length != 0) { // проверка на нахожедние в массиве rpearArr2 элементов
+    if (repearArr2.length != 0) { // проверка на нахожедние в массиве repearArr2 элементов
         return finalArr.concat(repearArr2) // через .concat() соединение 2х массовов в один 
     } else if(repearArr2 == 0) { // в случае если в repearArr2 нет элементов, выводить сразу положительный массив
         return finalArr
