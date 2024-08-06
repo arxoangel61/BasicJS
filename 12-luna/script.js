@@ -5,9 +5,9 @@ function lunaCard(num) {
     // console.log(typeof card)
     let checksum = 0;
     let finalsum = 0;
-    //console.log(repearCard(card))
+    // console.log(repearCard(card))
     
-    if(repearCard(card) == true) { // если элемент прошёл проверку то перебираем элемент на индекс и число
+    if(repearCard(card)) { // если элемент прошёл проверку то перебираем элемент на индекс и число
         for(let i = 0, b = 0; i<card.length; i++, b++) { // i - число элемента , b - индекс элемента
             //console.log(`индекс: ${b} элемент: ${card[i]}`)
             let num2 = card[i]  // для удобства приобразуем card[i] в num2
@@ -41,9 +41,8 @@ function repearCard(num) { // проверочная функция
         for(const elem of num) { // перебираем каждый символ и в случае не нахождения остатка от числа будет false
             if(elem % 2 == 0 || elem % 2 == 1) {
                 return true
-            } else {
-                return false
-            }
+            } 
+            return false
         }
     } else {
         return false
