@@ -1,5 +1,6 @@
 // 11.13. Домашнее задание - Итерации в массивах
 
+/*
 function repeatArr(arr) {
     let originalArr = arr;
     //console.log(originalArr)
@@ -89,8 +90,35 @@ function repearNegativeArr(arr) {
     return endArr
 }
 
+*/
+
+function repearArr(num) {
+
+    let positiveArr = [];
+
+    num.map(date => {
+        if(date.length != 10) {
+            return false
+        } else if(date.length == 10) {
+            //console.log(date[2],date[5])
+            if(date[2] == '/' || date[2] == '-' && date[5] == '/' || date[5] == '-') {
+                if(date[0]+date[1] != '00' && date[3]+date[4] != '00' && date[0]+date[1] <= 31 && date[3]+date[4] <= 12) {
+                    date = date.split('/').join('-');
+                    positiveArr.push(date)
+                }
+            }
+        } else {
+            return false
+        }
+    });
+    return positiveArr
+}
+
+
+
+
 const arr = ['10-02-2022', 'тест', '11/12/2023', '00/13/2022', '41/12/2023', '11/00/2023', '110/0/2023', 'wertyuiopa', '29-12-1987', '30/11/1990', '27/12-1984', '12-01/1964'];
 
-console.log(repeatArr(arr)) // приводим все правильные даты к формату 10-02-2022
+console.log(repearArr(arr)) // приводим все правильные даты к формату 10-02-2022
 
 
