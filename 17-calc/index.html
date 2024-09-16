@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17-calc</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main">
+        <form class="form">
+            <label>
+                Первое число
+                <input class="num num__one">
+            </label>
+            <label>
+                Второе число
+                <input class="num num__two">
+            </label>
+        </form>
+        <div class="operations">
+            <button class="btn" onclick="resultSum()"> + </button>
+            <button class="btn" onclick="resultMin()"> - </button>
+            <button class="btn" onclick="resultMult()"> * </button>
+            <button class="btn"  onclick="resultDivi()"> / </button>
+        </div>
+        <div class="result">
+            <p class="result__text">Результат</p>
+            <div class="result__info"></div>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
