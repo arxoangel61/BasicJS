@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>habbit app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="panel">
+            <div class="panel__logo">
+                <img src="img/Logomark.png" alt="logo">
+                <p class="panel__text">Habbit</p>
+            </div>
+            <div class="panel__menu">
+                <div class="panel__list">
+                    <!-- <button class="panel__item panel__item--active menu-habbut-id="1">
+                        <img src="img/water.svg" alt="Вода">
+                    </button>
+                    <button class="panel__item">
+                        <img src="img/food.svg" alt="Еда">
+                    </button>
+                    <button class="panel__item">
+                        <img src="img/sport.svg" alt="Спорт">
+                    </button> -->
+                </div>
+                <button class="panel__add" onclick="togglePopup()">
+                    <img src="img/Add.svg" alt="добавить привычку">
+                </button>
+            </div>
+            
+        </div>
+
+        <div class="content">
+            <header class="header">
+                <h1 class="header__title">-</h1>
+                <button class="header__delete" onclick="deleteHabbit()">Удалить раздел</button>
+                <div class="progress">
+                    <div class="progress_text">
+                        <div class="progress__name">Прогресс</div>
+                        <div class="progress__percent">%</div>
+                    </div>
+                    <div class="progress__bar">
+                        <div class="progress__cover-bar"></div>
+                    </div>
+                </div>
+            </header>
+            <main class="main">
+                <div id="days">
+                    <!-- <div class="habbit">
+                        <div class="habbit__day">День 1</div>
+                        <div class="habbit__comment">Первый подход всегда даётся тяжело</div>
+                        <button class="habbit__delete">
+                            <img class="habbit__delete--img" src="img/delete.svg" alt="корзина удаления дня">
+                        </button>
+                    </div> -->
+                </div>
+                <div class="habbit">
+                    <div class="habbit__day">День _</div>
+                    <form class="habbit__form" onsubmit="addDays(event)">
+                        <input name="comment" class="habbit__input--icon" type="text" placeholder="Комментарий">
+                        <img class="input__icon" src="img/Group 68.svg" alt="Иконка для input">
+                        <button class="habbit__btn" type="submit">
+                            Готово
+                        </button>
+                    </form>
+                </div>
+            </main>
+        </div>
+        <div class="cover" id="add__habbit--popup">
+            <div class="popup">
+                <button class="popup__close">
+                    <img class="popup__slose--btn" src="img/shape.svg" alt="крестик для закрытия popup" onclick="togglePopup()">
+                </button>
+                <h1 class="popup__title">Новая привычка</h1>
+                <div class="icon__label">Иконка</div>
+                <div class="icon__select">
+                    <div class="popup__btns">
+                        <button class="icon icon__active" onclick="setIcon(this,'sport')">
+                            <img src="img/sport.svg" alt="sport">
+                        </button>
+                        <button class="icon" onclick="setIcon(this,'water')">
+                            <img src="img/water.svg" alt="water">
+                        </button>
+                        <button class="icon" onclick="setIcon(this,'food')">
+                            <img src="img/food.svg" alt="food">
+                        </button>
+                    </div>
+                    <form class="popup__form" onsubmit="addHabbit(event)">
+                        <input type="text" name="name" placeholder="Название">
+                        <input type="text" name="icon" placeholder="Инонки" hidden value="sport">
+                        <input type="number" name="target" placeholder="Цель">
+                        <button class="habbit__btn popup__btn" type="sumbit" >Добавить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="scripts.js"></script>
+</body>
+</html>
